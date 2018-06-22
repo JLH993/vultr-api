@@ -6,7 +6,7 @@ import json
 
 ## Global Variables
 API_URL = "https://api.vultr.com/v1"
-API_KEY = "NVFCFJTGJSEPZ3ZZFGHHZEC7WPEHZEGDCN4Q"
+API_KEY = "EnterAPIKeyHere"
 
 ## Begin Functions
 def GetFirewallGroups ():
