@@ -128,58 +128,58 @@ def ShowHelp():
 ## Begin doing the thing...
 
 # Help me... Or tell me what I am doing wrong.
-    if len(sys.argv) < 2 or sys.argv[1] == "help":
-        ShowHelp()
-        quit()
+if len(sys.argv) < 2 or sys.argv[1] == "help":
+    ShowHelp()
+    quit()
 
 # Firewall groups: list/create/destroy
-    if sys.argv[1] == "firewall-group-list":
-        GetFirewallGroups()
+if sys.argv[1] == "firewall-group-list":
+    GetFirewallGroups()
 
-    if sys.argv[1] == "firewall-group-create":
-        CreateFirewallGroup(sys.argv[2])
+if sys.argv[1] == "firewall-group-create":
+    CreateFirewallGroup(sys.argv[2])
 
-    if sys.argv[1] == "firewall-group-delete":
-        DeleteFirewallGroup(sys.argv[2])
+if sys.argv[1] == "firewall-group-delete":
+    DeleteFirewallGroup(sys.argv[2])
 
 # Firewall rules: list/create/destroy/https/ssh
-    if sys.argv[1] == "firewall-rules-list":
-        GetFirewallRules(sys.argv[2])
+if sys.argv[1] == "firewall-rules-list":
+    GetFirewallRules(sys.argv[2])
 
-    if sys.argv[1] == "firewall-rule-create" and len(sys.argv) > 4:
-        ip = sys.argv[3].split('/')[0]
-        cidr = sys.argv[3].split('/')[1]
-        if sys.argv[4].find('/') != -1:
-            port = sys.argv[4].split('/')[0]
-            proto = sys.argv[4].split('/')[1]
-        else:
-            port = '0'
-            proto = sys.argv[4]
-        if proto != "tcp" and proto != "udp" and proto != "icmp":
-            quit("Error: Valid protocol not specified. Example of valid protocol: tcp/udp/icmp")
-        if int(cidr) > 32 or int(cidr) < 0:
-            quit("Error: Invalid CIDR specified.")
-        rData = {'protocol': proto, 'port': port, 'subnet': ip, 'subnet_size': cidr}
-        CreateFirewallRule(sys.argv[2], rData)
+if sys.argv[1] == "firewall-rule-create" and len(sys.argv) > 4:
+    ip = sys.argv[3].split('/')[0]
+    cidr = sys.argv[3].split('/')[1]
+    if sys.argv[4].find('/') != -1:
+        port = sys.argv[4].split('/')[0]
+        proto = sys.argv[4].split('/')[1]
+    else:
+        port = '0'
+        proto = sys.argv[4]
+    if proto != "tcp" and proto != "udp" and proto != "icmp":
+        quit("Error: Valid protocol not specified. Example of valid protocol: tcp/udp/icmp")
+    if int(cidr) > 32 or int(cidr) < 0:
+        quit("Error: Invalid CIDR specified.")
+    rData = {'protocol': proto, 'port': port, 'subnet': ip, 'subnet_size': cidr}
+    CreateFirewallRule(sys.argv[2], rData)
 
-    if sys.argv[1] == "firewall-rule-delete":
-        DeleteFirewallRule(sys.argv[2], sys.argv[3])
+if sys.argv[1] == "firewall-rule-delete":
+    DeleteFirewallRule(sys.argv[2], sys.argv[3])
 
-    if sys.argv[1] == "firewall-add-https":
-        rData = {'protocol': 'tcp', 'port': '443', 'subnet': sys.argv[3], 'subnet_size': 32}
-        CreateFirewallRule(sys.argv[2], rData)
+if sys.argv[1] == "firewall-add-https":
+    rData = {'protocol': 'tcp', 'port': '443', 'subnet': sys.argv[3], 'subnet_size': 32}
+    CreateFirewallRule(sys.argv[2], rData)
 
-    if sys.argv[1] == "firewall-add-http":
-        rData = {'protocol': 'tcp', 'port': '80', 'subnet': sys.argv[3], 'subnet_size': 32}
-        CreateFirewallRule(sys.argv[2], rData)
+if sys.argv[1] == "firewall-add-http":
+    rData = {'protocol': 'tcp', 'port': '80', 'subnet': sys.argv[3], 'subnet_size': 32}
+    CreateFirewallRule(sys.argv[2], rData)
 
-    if sys.argv[1] == "firewall-add-ssh":
-        rData = {'protocol': 'tcp', 'port': '22', 'subnet': sys.argv[3], 'subnet_size': 32}
-        CreateFirewallRule(sys.argv[2], rData)
+if sys.argv[1] == "firewall-add-ssh":
+    rData = {'protocol': 'tcp', 'port': '22', 'subnet': sys.argv[3], 'subnet_size': 32}
+    CreateFirewallRule(sys.argv[2], rData)
 
 # Server Information: list/info [to be cont]
-    if sys.argv[1] == "server-list":
-        ShowServerList()
+if sys.argv[1] == "server-list":
+    ShowServerList()
 
-    if sys.argv[1] == "server-info":
-        ShowServerInfo()
+if sys.argv[1] == "server-info":
+    ShowServerInfo()
