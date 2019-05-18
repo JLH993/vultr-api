@@ -101,29 +101,29 @@ def ShowServerInfo ():
 ###################
 # Help options:   #
 ###################
-    def ShowHelp():
-        helptext = "Error: not enough arguments, see usage below...\n\n" + sys.argv[
+def ShowHelp():
+    helptext = "Error: not enough arguments, see usage below...\n\n" + sys.argv[
             0] + " <command> [args]\n\nCommands:\n\nfirewall-group-list\t\t\t\t\tlist firewall groups.\nfirewall-rules-list <fwgid>\t\t\t\tlist rules for firewall group specified\nfirewall-add-ssh <fwgid> <ipaddr>\t\t\tadd SSH rule for specified IP address\nfirewall-add-http <fwgid> <ipaddr>\t\t\tadd HTTP rule for specified IP address\nfirewall-add-https <fwgid> <ipaddr>\t\t\tadd HTTPS rule for specified IP address"
-        print
-        helptext
-        print
-        "firewall-group-list\t\t\t\t\t\tlist firewall groups"
-        print
-        "firewall-group-create <fwgid>\t\t\tcreate firewall group"
-        print
-        "firewall-group-delete <fwgid>\t\t\tdelete firewall group"
-        print
-        "firewall-rules-list <fwgid>\t\t\tlist firewall rules for specified group"
-        print
-        "firewall-rule-add <fwgid> <ip/cidr> <port/proto>\tadd manually specified firewall rule"
-        print
-        "firewall-rule-delete <fwgid> <rulenumber>\t\tdelete firewall rule"
-        print
-        "server-list\t\t\t\t\tprint high level list of servers"
-        print
-        "server-info\t\t\t\t\tprint detailed list of server information"
-        print
-        ""
+    print
+    helptext
+    print
+    "firewall-group-list\t\t\t\t\t\tlist firewall groups"
+    print
+    "firewall-group-create <fwgid>\t\t\tcreate firewall group"
+    print
+    "firewall-group-delete <fwgid>\t\t\tdelete firewall group"
+    print
+    "firewall-rules-list <fwgid>\t\t\tlist firewall rules for specified group"
+    print
+    "firewall-rule-add <fwgid> <ip/cidr> <port/proto>\tadd manually specified firewall rule"
+    print
+    "firewall-rule-delete <fwgid> <rulenumber>\t\tdelete firewall rule"
+    print
+    "server-list\t\t\t\t\tprint high level list of servers"
+    print
+    "server-info\t\t\t\t\tprint detailed list of server information"
+    print
+    ""
 
 ## Begin doing the thing...
 
